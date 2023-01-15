@@ -11,7 +11,20 @@ namespace ADDRESSBOOK
         static void Main(string[] args)
         {
             Addressbook book = new Addressbook();
-            book.CreateContact();
+
+            bool addcontact = true;
+            while(addcontact)
+            {
+                book.CreateContact();
+                Console.WriteLine("Do you want to add more contact? (Y/N): ");
+                string ans = Console.ReadLine();
+                if(ans == "N" || ans== "Y") 
+                {
+                    addcontact= false;
+                }
+
+            }
+            book.DisplayContact();
         }
     }
 }
