@@ -109,5 +109,26 @@ namespace ADDRESSBOOK
                 }
             }
         }
+        public void DeleteContact()
+        {
+            int i = 0;
+            Console.WriteLine("Enter Firstname to edit: ");
+            string Firstname = Console.ReadLine();
+
+            foreach(var record in data)
+            {
+                if(record.Firstname == Firstname)
+                {
+                    data.Remove(record);
+                    Console.WriteLine("Contact Deleted Successfully.");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Name Does not exist.");
+                }
+            }
+        }
+
     }
 }
