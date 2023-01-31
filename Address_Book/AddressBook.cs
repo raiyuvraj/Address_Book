@@ -9,6 +9,7 @@ namespace ADDRESSBOOK
     public class Addressbook
     {
         List<Contact> data = new List<Contact>();
+        public int NumberOfContact { get; set; }
         public void CreateContact()
         {
             Contact Contact = new Contact();
@@ -24,11 +25,13 @@ namespace ADDRESSBOOK
             Contact.State = Console.ReadLine();
             Console.WriteLine("Enter Zip");
             Contact.Zip = Convert.ToInt64(Console.ReadLine());
-            Console.WriteLine("Enter PhoneNumber");
+            Console.WriteLine("Enter PhoneN umber");
             Contact.Phone = Convert.ToInt64(Console.ReadLine());
             Console.WriteLine("Enter MailId");
             Contact.Email = Console.ReadLine();
             data.Add(Contact);
+            NumberOfContact++;
+            DisplayContact(); 
 
         }
         public void DisplayContact()
